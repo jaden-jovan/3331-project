@@ -11,8 +11,20 @@ const seo = {
 <Layout seo={seo}>
 	<Container>
 		<TextSection narrow>
-			<h1>Solutions</h1>
-      <p>Comparing traditional methods with Neuromuscular Electrical Stimulation.</p>
+		<h1>
+      <span class="icon-header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          <path d="M12 12v3"></path>
+          <path d="M8 12h8"></path>
+        </svg>
+      </span>
+      Countermeasures: Fighting the Fade
+    </h1>
+		<p>
+			To combat muscle loss, space agencies currently rely on one main tool: <strong>exercise</strong>. But is it enough? And what if there's a better way?
+		</p>
     </TextSection>
 
     <section class="comparison-section">
@@ -46,6 +58,20 @@ const seo = {
 </Layout>
 
 <style>
+  .icon-header {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    color: var(--theme-primary);
+  }
+	.comparison-grid {
+		display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
   .comparison-section {
     display: grid;
     grid-template-columns: 1fr;
@@ -95,7 +121,7 @@ const seo = {
     margin-top: 2rem;
     padding: 1rem;
     border-radius: 8px;
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(255,255,255,0.05);
   }
 
   .limitations h3, .benefits h3 {
