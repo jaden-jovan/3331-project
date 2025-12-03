@@ -76,6 +76,7 @@ const seo = {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+    padding-bottom: 2rem;
   }
   .nav-arrow {
     display: inline-flex;
@@ -124,15 +125,99 @@ const seo = {
     margin-bottom: 0.5rem;
   }
 
+  /* Custom Range Slider */
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--theme-primary);
+    cursor: pointer;
+    margin-top: -8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+
+  input[type=range]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--theme-primary);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: var(--theme-surface-2);
+    border-radius: 2px;
+  }
+
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: var(--theme-surface-2);
+    border-radius: 2px;
+  }
+
+  /* Custom Radio Buttons */
   .radio-group {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
   }
 
   .radio-group label {
     font-weight: normal;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+  .radio-group input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--theme-surface-2);
+    border-radius: 50%;
+    margin: 0;
+    display: grid;
+    place-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .radio-group input[type="radio"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--theme-primary);
+  }
+
+  .radio-group input[type="radio"]:checked {
+    border-color: var(--theme-primary);
+  }
+
+  .radio-group input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+
+  .radio-group label:hover input[type="radio"] {
+    border-color: var(--theme-primary);
   }
 
   .visualization {

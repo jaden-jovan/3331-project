@@ -56,10 +56,18 @@ const seo = {
           <button type="submit" id="submit-btn">Submit Answers</button>
         </form>
 
-        <div id="result" class="result hidden"></div>
       </div>
 		</TextSection>
 	</Container>
+
+  <div id="quiz-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <h2 id="modal-title">Quiz Complete!</h2>
+      <p id="modal-message"></p>
+      <div id="modal-score" class="score-display"></div>
+      <button id="close-modal-btn">Close</button>
+    </div>
+  </div>
 </Layout>
 
 <style>
@@ -131,21 +139,71 @@ const seo = {
     background-color: var(--theme-primary-hover);
   }
 
-  .result {
-    margin-top: 2rem;
-    padding: 1rem;
-    border-radius: 8px;
+  /* Modal Styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .modal-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-content {
+    background-color: var(--theme-surface-1);
+    padding: 2rem;
+    border-radius: var(--theme-shape-radius);
+    border: 2px solid var(--theme-primary);
+    text-align: center;
+    max-width: 90%;
+    width: 500px;
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+
+  .modal-content h2 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .modal-overlay.visible .modal-content {
+    transform: scale(1);
+  }
+
+  .score-display {
+    font-size: 3rem;
     font-weight: bold;
+    color: var(--theme-primary);
+    margin: 1rem 0;
   }
 
-  .result.success {
-    background-color: #d4edda;
-    color: #155724;
+  #close-modal-btn {
+    background-color: var(--theme-surface-2);
+    color: var(--theme-on-bg);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--theme-button-border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
   }
 
-  .result.error {
-    background-color: #f8d7da;
-    color: #721c24;
+  #close-modal-btn:hover {
+    background-color: var(--theme-primary);
+    color: var(--theme-on-primary);
   }
 
   .hidden {
@@ -155,7 +213,11 @@ const seo = {
 
 <script>
   const form = document.getElementById('quiz-form') as HTMLFormElement;
-  const result = document.getElementById('result');
+  const modal = document.getElementById('quiz-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalMessage = document.getElementById('modal-message');
+  const modalScore = document.getElementById('modal-score');
+  const closeBtn = document.getElementById('close-modal-btn');
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -177,14 +239,43 @@ const seo = {
       }
     }
 
-    result.classList.remove('hidden', 'success', 'error');
+    // Update Modal Content
+    modalScore.textContent = `${score}/5`;
     
     if (score === 5) {
-      result.textContent = `Perfect! You got ${score}/5 correct.`;
-      result.classList.add('success');
+      modalTitle.textContent = "Mission Accomplished!";
+      modalMessage.textContent = "Perfect score! You are ready for the mission.";
+      // Optional: Add confetti logic here if a library was available
+    } else if (score >= 3) {
+      modalTitle.textContent = "Well Done!";
+      modalMessage.textContent = "Good understanding, but room for improvement.";
     } else {
-      result.textContent = `You got ${score}/5 correct. Review the material and try again.`;
-      result.classList.add('error');
+      modalTitle.textContent = "Mission Aborted";
+      modalMessage.textContent = "Review the material and try again.";
+    }
+
+    // Show Modal
+    modal.classList.remove('hidden');
+    // Small delay to allow display:block to apply before opacity transition
+    setTimeout(() => {
+      modal.classList.add('visible');
+    }, 10);
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('visible');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300); // Wait for transition
+  });
+
+  // Close on click outside
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('visible');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
     }
   });
 </script>
