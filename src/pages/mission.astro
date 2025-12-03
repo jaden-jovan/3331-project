@@ -1,104 +1,63 @@
 ---
-import { Container, FeatureCard } from '@components/odyssey-theme';
+import { Container, TextSection, Button } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
-import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 
 const seo = {
-	title: 'NMES for Astronauts | Home',
-	description: 'Introduction to Neuromuscular Electrical Stimulation and Muscle Weakness in Astronauts',
+	title: 'NMES for Astronauts | Mission Briefing',
+	description: 'Educational resources on Neuromuscular Electrical Stimulation and Muscle Weakness in Astronauts',
 };
 ---
 
 <Layout seo={seo}>
 	<Container>
-    <section class="feature-card__section">
-      <h2>Mission Briefing</h2>
-      <p>
+    <TextSection narrow>
+      <h1 style="text-align: center;">Mission Briefing</h1>
+      <p style="text-align: center; font-size: 1.2rem;">
         Space is <strong>hostile</strong> to the human body. Without <strong>gravity</strong>, muscles waste away. Explore the challenge, the current <strong>fixes</strong>, and the future <strong>solution</strong>.
       </p>
-      <div class="feature-card__grid">
-        <FeatureCard href="/background" title="The Context">
-          <div slot="icon" class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-              <line x1="16" y1="8" x2="2" y2="22"></line>
-              <line x1="17.5" y1="15" x2="9" y2="15"></line>
-            </svg>
-          </div>
-        </FeatureCard>
-        <FeatureCard href="/countermeasures" title="The Solutions">
-          <div slot="icon" class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-              <path d="M12 12v3"></path>
-              <path d="M8 12h8"></path>
-            </svg>
-          </div>
-        </FeatureCard>
-        <FeatureCard href="/simulation" title="Simulation">
-          <div slot="icon" class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 3v18h18"></path>
-              <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path>
-            </svg>
-          </div>
-        </FeatureCard>
-        <FeatureCard href="/assessment" title="Take Quiz">
-          <div slot="icon" class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 11l3 3L22 4"></path>
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-            </svg>
-          </div>
-        </FeatureCard>
+      
+      <div class="objectives-container">
+        <h2>Your Objectives</h2>
+        <ul>
+          <li>Understand the <strong>physiological mechanisms</strong> of <strong>skeletal muscle atrophy</strong> induced by <strong>microgravity</strong> [2, 6].</li>
+          <li>Evaluate the <strong>efficacy</strong> of <strong>Neuromuscular Electrical Stimulation (NMES)</strong> as a countermeasure for muscle deconditioning [4].</li>
+          <li>Analyze the <strong>clinical relevance</strong> of spaceflight-induced muscle loss for long-duration missions and terrestrial medicine [1, 7].</li>
+        </ul>
       </div>
-    </section>
+
+      <div class="action-container">
+        <Button href="/background" customIcon>
+          Proceed to Context
+          <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </Button>
+      </div>
+    </TextSection>
 	</Container>
 </Layout>
 
 <style>
-	.feature-card__section {
-		margin: var(--section-margin) auto;
-	}
-	.feature-card__section h2,
-	.feature-card__section p {
-		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
-		max-width: 800px;
-	}
-	.feature-card__grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--theme-grid-gap);
-	}
-  .card-icon {
-    width: 100px;
-    height: 100px;
-    margin: 2rem auto;
-    color: var(--theme-primary);
-    transition: transform 0.3s ease;
+  .objectives-container {
+    margin: 3rem 0;
+    text-align: left;
   }
-  .card-icon svg {
-    width: 100%;
-    height: 100%;
+  .objectives-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
   }
-  :global(.feature-card__card) {
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
+  .objectives-container ul {
+    padding-left: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
-  :global(.feature-card__card:hover) {
-    border-color: var(--theme-primary);
-    box-shadow: 0 10px 30px -10px rgba(255, 50, 50, 0.3);
+  .objectives-container li {
+    margin-bottom: 1rem;
   }
-  :global(.feature-card__link:hover) .card-icon {
-    transform: scale(1.1);
-    color: var(--theme-primary-hover);
+  .action-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
   }
-	@media (max-width: 768px) {
-		.feature-card__grid {
-			grid-template-columns: 1fr;
-		}
-	}
 </style>
