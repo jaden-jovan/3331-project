@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/favicon.png"><!-- Primary Meta Tags --><title>NMES Simulation | NMES for Astronauts</title><meta name="title" content="NMES Simulation | NMES for Astronauts"><meta name="description" content="Interactive NMES Simulation Tool"><link rel="canonical" href="https://odyssey-theme.sapling.supply/simulation/"><!-- Generator --><meta name="generator" content="Astro v4.15.9"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://odyssey-theme.sapling.supply/simulation/"><meta property="og:title" content="NMES Simulation | NMES for Astronauts"><meta property="og:description" content="Interactive NMES Simulation Tool"><meta property="og:image" content="https://odyssey-theme.sapling.supply/social.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://odyssey-theme.sapling.supply/simulation/"><meta property="twitter:title" content="NMES Simulation | NMES for Astronauts"><meta property="twitter:description" content="Interactive NMES Simulation Tool"><meta property="twitter:image" content="https://odyssey-theme.sapling.supply/social.png"><!-- For Demonstration of the themes --><!-- This is a simple script to check if there is a theme value in local storage. That way the theme stays with you between pages --><script>
+	const doc = document.firstElementChild;
+	const localStorageTheme = localStorage.getItem('theme');
+
+	if (localStorageTheme !== null) {
+		doc.setAttribute('data-theme', localStorageTheme);
+	}
+</script><!-- Google Analytics --><style>.simulation-container[data-astro-cid-s4xytwc2]{border:2px solid var(--theme-surface-2);border-radius:var(--theme-shape-radius);padding:2rem;margin-top:2rem;display:grid;gap:2rem}.controls[data-astro-cid-s4xytwc2]{display:flex;flex-direction:column;gap:1rem}.control-group[data-astro-cid-s4xytwc2]{display:flex;align-items:center;gap:1rem}.control-group[data-astro-cid-s4xytwc2] label[data-astro-cid-s4xytwc2]{width:120px;font-weight:700}.control-group[data-astro-cid-s4xytwc2] input[data-astro-cid-s4xytwc2]{flex:1}.visualizer[data-astro-cid-s4xytwc2]{background:#f0f0f0;padding:2rem;border-radius:8px;text-align:center}.muscle[data-astro-cid-s4xytwc2]{width:100%;height:100px;background:#e0e0e0;border-radius:50px;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:10px;transition:transform .1s ease}.fiber[data-astro-cid-s4xytwc2]{height:10px;background:#ff6b6b;border-radius:5px;width:100%}#status[data-astro-cid-s4xytwc2]{margin-top:1rem;font-weight:700;color:#333}.twitch[data-astro-cid-s4xytwc2]{animation:twitch .1s ease}.tetanus[data-astro-cid-s4xytwc2]{transform:scaleX(.9);background:#ff4040}@keyframes twitch{0%{transform:scaleX(1)}50%{transform:scaleX(.95)}to{transform:scaleX(1)}}
+</style>
+<link rel="stylesheet" href="/_astro/consider-hybrid-work.6RmqerQy.css">
+<link rel="stylesheet" href="/_astro/contact.40_6hDNW.css"><script type="module">const i=document.getElementById("frequency"),l=document.getElementById("intensity"),d=document.getElementById("freq-val"),v=document.getElementById("int-val"),a=document.getElementById("start-btn"),e=document.getElementById("muscle"),n=document.getElementById("status");let s=!1,o=null;i.addEventListener("input",t=>{d.textContent=`${t.target.value} Hz`,s&&I()});l.addEventListener("input",t=>{v.textContent=`${t.target.value} mA`});a.addEventListener("click",()=>{s?u():c()});function c(){s=!0,a.textContent="Stop Stimulation";const t=parseInt(i.value),r=parseInt(l.value);n.textContent=`Stimulating at ${t} Hz, ${r} mA`;const m=1e3/t;t>=20?(e.classList.add("tetanus"),n.textContent+=" - Tetanic Contraction"):(o=setInterval(()=>{e.classList.add("twitch"),setTimeout(()=>e.classList.remove("twitch"),50)},m),n.textContent+=" - Twitch Contraction")}function u(){s=!1,a.textContent="Start Stimulation",clearInterval(o),e.classList.remove("tetanus"),e.classList.remove("twitch"),n.textContent="Status: Idle"}function I(){u(),c()}
+</script>
+<script>/** @license Copyright 2020 Google LLC (BSD-3-Clause) */
+/** Bundled JS generated from "@astrojs/lit/client-shim.js" */
+var N = Object.defineProperty;
+var i = (t, n) => () => (t && (n = t((t = 0))), n);
+var b = (t, n) => {
+	for (var a in n) N(t, a, { get: n[a], enumerable: !0 });
+};
+function s() {
+	if (d === void 0) {
+		let t = document.createElement('div');
+		(t.innerHTML = '<div><template shadowroot="open" shadowrootmode="open"></template></div>'),
+			(d = !!t.firstElementChild.shadowRoot);
+	}
+	return d;
+}
+var d,
+	m = i(() => {});
+var p,
+	c,
+	f,
+	u = i(() => {
+		(p = (t) => t.parentElement === null),
+			(c = (t) => t.tagName === 'TEMPLATE'),
+			(f = (t) => t.nodeType === Node.ELEMENT_NODE);
+	});
+var h,
+	E = i(() => {
+		m();
+		u();
+		h = (t) => {
+			var n;
+			if (s()) return;
+			let a = [],
+				e = t.firstElementChild;
+			for (; e !== t && e !== null; )
+				if (c(e)) a.push(e), (e = e.content);
+				else if (e.firstElementChild !== null) e = e.firstElementChild;
+				else if (f(e) && e.nextElementSibling !== null) e = e.nextElementSibling;
+				else {
+					let o;
+					for (; e !== t && e !== null; )
+						if (p(e)) {
+							o = a.pop();
+							let r = o.parentElement,
+								l = o.getAttribute('shadowroot');
+							if (((e = o), l === 'open' || l === 'closed')) {
+								let y = o.hasAttribute('shadowrootdelegatesfocus');
+								try {
+									r.attachShadow({ mode: l, delegatesFocus: y }).append(o.content);
+								} catch {}
+							} else o = void 0;
+						} else {
+							let r = e.nextElementSibling;
+							if (r != null) {
+								(e = r), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							let l =
+								(n = e.parentElement) === null || n === void 0 ? void 0 : n.nextElementSibling;
+							if (l != null) {
+								(e = l), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							(e = e.parentElement), o !== void 0 && (o.parentElement.removeChild(o), (o = void 0));
+						}
+				}
+		};
+	});
+var w = i(() => {
+	E();
+});
+var v = {};
+b(v, { hasNativeDeclarativeShadowRoots: () => s, hydrateShadowRoots: () => h });
+var S = i(() => {
+	m();
+	w();
+});
+async function g() {
+	let { hydrateShadowRoots: t } = await Promise.resolve().then(() => (S(), v));
+	window.addEventListener('DOMContentLoaded', () => t(document.body), { once: true });
+}
+var x = new DOMParser()
+	.parseFromString(
+		'<p><template shadowroot="open" shadowrootmode="open"></template></p>',
+		'text/html',
+		{
+			includeShadowRoots: !0,
+		}
+	)
+	.querySelector('p');
+(!x || !x.shadowRoot) && g();
+</script></head> <body> <a href="#content" data-astro-cid-c7ibh6fj>Skip to main content</a>   <script type="module">
+  const bodyElement = document.querySelector('body');
+  const menuButton = document.querySelector('#menuButton')
+  const navHeader = document.querySelector('#odysseyNavHeader');
+  const menuButtonIconHam = document.querySelector('#menuButtonIconHam');
+  const menuButtonIconClose = document.querySelector('#menuButtonIconClose');
+  let scrollPosition = 0;
+
+  menuButton.addEventListener('click', toggleMenu)
+
+  function toggleMenu() {
+    menuButtonIconHam.toggleAttribute('hidden');
+    menuButtonIconClose.toggleAttribute('hidden');
+    
+    if (navHeader.hasAttribute('mobile-menu-open', true)) {
+      menuButton.title = "Open Main Menu"
+      // unlock scroll position
+      bodyElement.style.removeProperty('overflow');
+      bodyElement.style.removeProperty('position');
+      bodyElement.style.removeProperty('top');
+      bodyElement.style.removeProperty('width');
+      window.scrollTo(0, scrollPosition);
+    } else {
+      menuButton.title = "Close Main Menu"
+      // lock scroll position
+      scrollPosition = window.pageYOffset;
+      bodyElement.style.overflow = 'hidden';
+      bodyElement.style.position = 'fixed';
+      bodyElement.style.top = `-${scrollPosition}px`;
+      bodyElement.style.width = '100%';
+    }
+    
+    navHeader.toggleAttribute('mobile-menu-open');
+  }
+</script> <header id="odysseyNavHeader" class="header--right" data-astro-cid-3hxe222u> <div class="header-logo-menu__container" data-astro-cid-3hxe222u> <button id="menuButton" title="Open Main Menu" data-astro-cid-3hxe222u> <span id="menuButtonIconHam" data-astro-cid-3hxe222u> <svg width="24px" height="24px" viewBox="0 0 24 24" data-astro-cid-3hxe222u data-icon="ic:baseline-menu">  <symbol id="ai:ic:baseline-menu"><path fill="currentColor" d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"/></symbol><use xlink:href="#ai:ic:baseline-menu"></use>  </svg> </span> <span id="menuButtonIconClose" hidden data-astro-cid-3hxe222u> <svg width="24px" height="24px" viewBox="0 0 24 24" data-astro-cid-3hxe222u data-icon="ic:baseline-close">  <symbol id="ai:ic:baseline-close"><path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"/></symbol><use xlink:href="#ai:ic:baseline-close"></use>  </svg> </span> </button> <a class="header-logo__link" href="/" data-astro-cid-3hxe222u> <span> <p class="odyssey-logo" data-astro-cid-tvrurpns>Odyssey</p>  </span> </a> </div> <div class="header-nav__container" data-astro-cid-3hxe222u>  <nav data-astro-cid-3hxe222u> <ul data-astro-cid-3hxe222u> <li data-astro-cid-3hxe222u><a href="/" data-astro-cid-3hxe222u>Home</a></li><li data-astro-cid-3hxe222u><a href="/background" data-astro-cid-3hxe222u>Background</a></li><li data-astro-cid-3hxe222u><a href="/countermeasures" data-astro-cid-3hxe222u>Countermeasures</a></li><li data-astro-cid-3hxe222u><a href="/simulation" data-astro-cid-3hxe222u>Simulation</a></li><li data-astro-cid-3hxe222u><a href="/assessment" data-astro-cid-3hxe222u>Assessment</a></li><li data-astro-cid-3hxe222u><a href="/references" data-astro-cid-3hxe222u>References</a></li> </ul> </nav>  </div> <div class="header-action-item__container" data-astro-cid-3hxe222u> <a class="btn undefined undefined undefined" href="/theme/get-started" target="" rel="" data-astro-cid-5sjhwv6c> Get Started </a>  </div> </header>  <main id="content">   <div id="page">  <div class="content__container " data-astro-cid-swtg25lo>  <div class="content__container content__container--narrow" data-astro-cid-swtg25lo>  <section class="text__section" data-astro-cid-umdwotzd>  <h1 data-astro-cid-s4xytwc2>NMES Simulation</h1> <p data-astro-cid-s4xytwc2>
+Use the controls below to simulate how Neuromuscular Electrical Stimulation (NMES) affects muscle fibers. Adjust the frequency and intensity to see the response.
+</p> <div class="simulation-container" data-astro-cid-s4xytwc2> <div class="controls" data-astro-cid-s4xytwc2> <div class="control-group" data-astro-cid-s4xytwc2> <label for="frequency" data-astro-cid-s4xytwc2>Frequency (Hz)</label> <input type="range" id="frequency" min="1" max="100" value="10" data-astro-cid-s4xytwc2> <span id="freq-val" data-astro-cid-s4xytwc2>10 Hz</span> </div> <div class="control-group" data-astro-cid-s4xytwc2> <label for="intensity" data-astro-cid-s4xytwc2>Intensity (mA)</label> <input type="range" id="intensity" min="1" max="100" value="20" data-astro-cid-s4xytwc2> <span id="int-val" data-astro-cid-s4xytwc2>20 mA</span> </div> <button id="start-btn" data-astro-cid-s4xytwc2>Start Stimulation</button> </div> <div class="visualizer" data-astro-cid-s4xytwc2> <div id="muscle" class="muscle" data-astro-cid-s4xytwc2> <div class="fiber" data-astro-cid-s4xytwc2></div> <div class="fiber" data-astro-cid-s4xytwc2></div> <div class="fiber" data-astro-cid-s4xytwc2></div> </div> <div id="status" data-astro-cid-s4xytwc2>Status: Idle</div> </div> </div>  </section>  </div>    </div>   </div>  </main>  </body></html>  

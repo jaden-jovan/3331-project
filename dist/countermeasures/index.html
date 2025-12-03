@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/favicon.png"><!-- Primary Meta Tags --><title>Countermeasures | NMES for Astronauts</title><meta name="title" content="Countermeasures | NMES for Astronauts"><meta name="description" content="Current countermeasures and the NMES solution"><link rel="canonical" href="https://odyssey-theme.sapling.supply/countermeasures/"><!-- Generator --><meta name="generator" content="Astro v4.15.9"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://odyssey-theme.sapling.supply/countermeasures/"><meta property="og:title" content="Countermeasures | NMES for Astronauts"><meta property="og:description" content="Current countermeasures and the NMES solution"><meta property="og:image" content="https://odyssey-theme.sapling.supply/social.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://odyssey-theme.sapling.supply/countermeasures/"><meta property="twitter:title" content="Countermeasures | NMES for Astronauts"><meta property="twitter:description" content="Current countermeasures and the NMES solution"><meta property="twitter:image" content="https://odyssey-theme.sapling.supply/social.png"><!-- For Demonstration of the themes --><!-- This is a simple script to check if there is a theme value in local storage. That way the theme stays with you between pages --><script>
+	const doc = document.firstElementChild;
+	const localStorageTheme = localStorage.getItem('theme');
+
+	if (localStorageTheme !== null) {
+		doc.setAttribute('data-theme', localStorageTheme);
+	}
+</script><!-- Google Analytics --><link rel="stylesheet" href="/_astro/consider-hybrid-work.6RmqerQy.css">
+<link rel="stylesheet" href="/_astro/contact.40_6hDNW.css"><script type="module">
+</script>
+<script>/** @license Copyright 2020 Google LLC (BSD-3-Clause) */
+/** Bundled JS generated from "@astrojs/lit/client-shim.js" */
+var N = Object.defineProperty;
+var i = (t, n) => () => (t && (n = t((t = 0))), n);
+var b = (t, n) => {
+	for (var a in n) N(t, a, { get: n[a], enumerable: !0 });
+};
+function s() {
+	if (d === void 0) {
+		let t = document.createElement('div');
+		(t.innerHTML = '<div><template shadowroot="open" shadowrootmode="open"></template></div>'),
+			(d = !!t.firstElementChild.shadowRoot);
+	}
+	return d;
+}
+var d,
+	m = i(() => {});
+var p,
+	c,
+	f,
+	u = i(() => {
+		(p = (t) => t.parentElement === null),
+			(c = (t) => t.tagName === 'TEMPLATE'),
+			(f = (t) => t.nodeType === Node.ELEMENT_NODE);
+	});
+var h,
+	E = i(() => {
+		m();
+		u();
+		h = (t) => {
+			var n;
+			if (s()) return;
+			let a = [],
+				e = t.firstElementChild;
+			for (; e !== t && e !== null; )
+				if (c(e)) a.push(e), (e = e.content);
+				else if (e.firstElementChild !== null) e = e.firstElementChild;
+				else if (f(e) && e.nextElementSibling !== null) e = e.nextElementSibling;
+				else {
+					let o;
+					for (; e !== t && e !== null; )
+						if (p(e)) {
+							o = a.pop();
+							let r = o.parentElement,
+								l = o.getAttribute('shadowroot');
+							if (((e = o), l === 'open' || l === 'closed')) {
+								let y = o.hasAttribute('shadowrootdelegatesfocus');
+								try {
+									r.attachShadow({ mode: l, delegatesFocus: y }).append(o.content);
+								} catch {}
+							} else o = void 0;
+						} else {
+							let r = e.nextElementSibling;
+							if (r != null) {
+								(e = r), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							let l =
+								(n = e.parentElement) === null || n === void 0 ? void 0 : n.nextElementSibling;
+							if (l != null) {
+								(e = l), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							(e = e.parentElement), o !== void 0 && (o.parentElement.removeChild(o), (o = void 0));
+						}
+				}
+		};
+	});
+var w = i(() => {
+	E();
+});
+var v = {};
+b(v, { hasNativeDeclarativeShadowRoots: () => s, hydrateShadowRoots: () => h });
+var S = i(() => {
+	m();
+	w();
+});
+async function g() {
+	let { hydrateShadowRoots: t } = await Promise.resolve().then(() => (S(), v));
+	window.addEventListener('DOMContentLoaded', () => t(document.body), { once: true });
+}
+var x = new DOMParser()
+	.parseFromString(
+		'<p><template shadowroot="open" shadowrootmode="open"></template></p>',
+		'text/html',
+		{
+			includeShadowRoots: !0,
+		}
+	)
+	.querySelector('p');
+(!x || !x.shadowRoot) && g();
+</script></head> <body> <a href="#content" data-astro-cid-c7ibh6fj>Skip to main content</a>   <script type="module">
+  const bodyElement = document.querySelector('body');
+  const menuButton = document.querySelector('#menuButton')
+  const navHeader = document.querySelector('#odysseyNavHeader');
+  const menuButtonIconHam = document.querySelector('#menuButtonIconHam');
+  const menuButtonIconClose = document.querySelector('#menuButtonIconClose');
+  let scrollPosition = 0;
+
+  menuButton.addEventListener('click', toggleMenu)
+
+  function toggleMenu() {
+    menuButtonIconHam.toggleAttribute('hidden');
+    menuButtonIconClose.toggleAttribute('hidden');
+    
+    if (navHeader.hasAttribute('mobile-menu-open', true)) {
+      menuButton.title = "Open Main Menu"
+      // unlock scroll position
+      bodyElement.style.removeProperty('overflow');
+      bodyElement.style.removeProperty('position');
+      bodyElement.style.removeProperty('top');
+      bodyElement.style.removeProperty('width');
+      window.scrollTo(0, scrollPosition);
+    } else {
+      menuButton.title = "Close Main Menu"
+      // lock scroll position
+      scrollPosition = window.pageYOffset;
+      bodyElement.style.overflow = 'hidden';
+      bodyElement.style.position = 'fixed';
+      bodyElement.style.top = `-${scrollPosition}px`;
+      bodyElement.style.width = '100%';
+    }
+    
+    navHeader.toggleAttribute('mobile-menu-open');
+  }
+</script> <header id="odysseyNavHeader" class="header--right" data-astro-cid-3hxe222u> <div class="header-logo-menu__container" data-astro-cid-3hxe222u> <button id="menuButton" title="Open Main Menu" data-astro-cid-3hxe222u> <span id="menuButtonIconHam" data-astro-cid-3hxe222u> <svg width="24px" height="24px" viewBox="0 0 24 24" data-astro-cid-3hxe222u data-icon="ic:baseline-menu">  <symbol id="ai:ic:baseline-menu"><path fill="currentColor" d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"/></symbol><use xlink:href="#ai:ic:baseline-menu"></use>  </svg> </span> <span id="menuButtonIconClose" hidden data-astro-cid-3hxe222u> <svg width="24px" height="24px" viewBox="0 0 24 24" data-astro-cid-3hxe222u data-icon="ic:baseline-close">  <symbol id="ai:ic:baseline-close"><path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"/></symbol><use xlink:href="#ai:ic:baseline-close"></use>  </svg> </span> </button> <a class="header-logo__link" href="/" data-astro-cid-3hxe222u> <span> <p class="odyssey-logo" data-astro-cid-tvrurpns>Odyssey</p>  </span> </a> </div> <div class="header-nav__container" data-astro-cid-3hxe222u>  <nav data-astro-cid-3hxe222u> <ul data-astro-cid-3hxe222u> <li data-astro-cid-3hxe222u><a href="/" data-astro-cid-3hxe222u>Home</a></li><li data-astro-cid-3hxe222u><a href="/background" data-astro-cid-3hxe222u>Background</a></li><li data-astro-cid-3hxe222u><a href="/countermeasures" data-astro-cid-3hxe222u>Countermeasures</a></li><li data-astro-cid-3hxe222u><a href="/simulation" data-astro-cid-3hxe222u>Simulation</a></li><li data-astro-cid-3hxe222u><a href="/assessment" data-astro-cid-3hxe222u>Assessment</a></li><li data-astro-cid-3hxe222u><a href="/references" data-astro-cid-3hxe222u>References</a></li> </ul> </nav>  </div> <div class="header-action-item__container" data-astro-cid-3hxe222u> <a class="btn undefined undefined undefined" href="/theme/get-started" target="" rel="" data-astro-cid-5sjhwv6c> Get Started </a>  </div> </header>  <main id="content">   <div id="page">  <div class="content__container " data-astro-cid-swtg25lo>  <div class="content__container content__container--narrow" data-astro-cid-swtg25lo>  <section class="text__section" data-astro-cid-umdwotzd>  <h1>Countermeasures</h1> <h2>Current Countermeasures and Their Limitations</h2> <p>
+To counteract the deleterious effects of microgravity, space agencies have instituted a multifaceted regimen of countermeasures. The cornerstone of this strategy is a rigorous exercise protocol, requiring astronauts aboard the International Space Station (ISS) to dedicate approximately two hours daily to both aerobic and resistive exercises on specialized hardware [4]. This physical training is supplemented by meticulously managed nutritional plans designed to provide adequate protein and caloric intake to preserve musculoskeletal integrity [1]. In certain contexts, pharmacological agents are employed to mitigate bone loss, and novel techniques such as Blood Flow Restriction Training (BFRT) are being investigated to elicit high-intensity training effects at lower mechanical loads [5].
+</p> <p>
+One of the foremost limitations regarding this issue is a simple lack of knowledge and information. The mechanisms of Spaceflight Associated Neuro-ocular Syndrome, specifically structural changes involving the flattening of the posterior ocular globe and choroidal folds, as well as potential redistribution of fluids throughout the entire body, are not yet known [2]. Despite speculation that microgravity affects the position of the brain and distribution of cerebrospinal fluid, much of said speculation is unquantified [2]. All that is known is that structural and volumetric changes are prevalent.
+</p> <p>
+Despite the implementation of this comprehensive countermeasure regimen, significant limitations persist. The existing protocols do not completely abrogate muscle and bone loss, and astronauts continue to exhibit substantial physiological deconditioning upon their return [7]. The substantial time commitment required for daily exercise detracts from time available for primary mission objectives and scientific research [4]. Furthermore, the requisite exercise hardware is characterized by significant mass, volume, and power consumption, rendering it impractical for the constrained environments of next-generation spacecraft designed for interplanetary transit [5]. Pharmacological and nutritional countermeasures have been taken into consideration; however, there is a lack of evidence to establish that such interventions have any efficacy [2]. Finally, conventional exercise modalities often fail to effectively target smaller, deep postural muscles critical for spinal stability and fine motor control [2].
+</p> <h2>Neuromuscular Electrical Stimulation as a Creative Solution</h2> <p>
+Electrode-based muscle stimulation, scientifically termed neuromuscular electrical stimulation (NMES), presents a promising technological solution that may overcome the limitations of current countermeasures. NMES utilizes transcutaneous electrical impulses to induce involuntary muscle contractions, offering a means to provide targeted and passive muscle conditioning. This allows for therapeutic intervention without conscious astronaut effort, enabling its use during other operational tasks or rest periods.
+</p> <p>
+From an engineering perspective, NMES systems would be characterized by their low mass, compact volume, and minimal power requirements, making them exceptionally well-suited for resource-limited deep-space missions. Crucially, by eliciting muscle contractions, NMES can effectively simulate the physiological mechanical loading absent in microgravity, thereby providing the necessary stimulus to maintain muscle mass and function. The potential for integrating NMES technology into wearable garments offers a pathway for convenient, unobtrusive, and continuous delivery of this vital countermeasure.
+</p>  </section>  </div>    </div>   </div>  </main>  </body></html>

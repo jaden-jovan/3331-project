@@ -1,0 +1,36 @@
+---
+import { Container, TextSection } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: 'Countermeasures | NMES for Astronauts',
+	description: 'Current countermeasures and the NMES solution',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<TextSection narrow>
+			<h1>Countermeasures</h1>
+			
+      <h2>Current Countermeasures and Their Limitations</h2>
+			<p>
+				To counteract the deleterious effects of microgravity, space agencies have instituted a multifaceted regimen of countermeasures. The cornerstone of this strategy is a rigorous exercise protocol, requiring astronauts aboard the International Space Station (ISS) to dedicate approximately two hours daily to both aerobic and resistive exercises on specialized hardware [4]. This physical training is supplemented by meticulously managed nutritional plans designed to provide adequate protein and caloric intake to preserve musculoskeletal integrity [1]. In certain contexts, pharmacological agents are employed to mitigate bone loss, and novel techniques such as Blood Flow Restriction Training (BFRT) are being investigated to elicit high-intensity training effects at lower mechanical loads [5].
+      </p>
+      <p>
+        One of the foremost limitations regarding this issue is a simple lack of knowledge and information. The mechanisms of Spaceflight Associated Neuro-ocular Syndrome, specifically structural changes involving the flattening of the posterior ocular globe and choroidal folds, as well as potential redistribution of fluids throughout the entire body, are not yet known [2]. Despite speculation that microgravity affects the position of the brain and distribution of cerebrospinal fluid, much of said speculation is unquantified [2]. All that is known is that structural and volumetric changes are prevalent.
+      </p>
+      <p>
+        Despite the implementation of this comprehensive countermeasure regimen, significant limitations persist. The existing protocols do not completely abrogate muscle and bone loss, and astronauts continue to exhibit substantial physiological deconditioning upon their return [7]. The substantial time commitment required for daily exercise detracts from time available for primary mission objectives and scientific research [4]. Furthermore, the requisite exercise hardware is characterized by significant mass, volume, and power consumption, rendering it impractical for the constrained environments of next-generation spacecraft designed for interplanetary transit [5]. Pharmacological and nutritional countermeasures have been taken into consideration; however, there is a lack of evidence to establish that such interventions have any efficacy [2]. Finally, conventional exercise modalities often fail to effectively target smaller, deep postural muscles critical for spinal stability and fine motor control [2].
+			</p>
+
+      <h2>Neuromuscular Electrical Stimulation as a Creative Solution</h2>
+      <p>
+        Electrode-based muscle stimulation, scientifically termed neuromuscular electrical stimulation (NMES), presents a promising technological solution that may overcome the limitations of current countermeasures. NMES utilizes transcutaneous electrical impulses to induce involuntary muscle contractions, offering a means to provide targeted and passive muscle conditioning. This allows for therapeutic intervention without conscious astronaut effort, enabling its use during other operational tasks or rest periods.
+      </p>
+      <p>
+        From an engineering perspective, NMES systems would be characterized by their low mass, compact volume, and minimal power requirements, making them exceptionally well-suited for resource-limited deep-space missions. Crucially, by eliciting muscle contractions, NMES can effectively simulate the physiological mechanical loading absent in microgravity, thereby providing the necessary stimulus to maintain muscle mass and function. The potential for integrating NMES technology into wearable garments offers a pathway for convenient, unobtrusive, and continuous delivery of this vital countermeasure.
+      </p>
+		</TextSection>
+	</Container>
+</Layout>

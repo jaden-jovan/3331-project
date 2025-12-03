@@ -1,0 +1,40 @@
+---
+import { Container, TextSection } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: 'References | NMES for Astronauts',
+	description: 'References and Bibliography',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<TextSection narrow>
+			<h1>References</h1>
+			<ol>
+        <li>
+          M. Tomsia et al., "Long-term space missions' effects on the human organism: what we do know and what requires further research," PMC, 2024.
+        </li>
+        <li>
+          M. Parafati et al., "Microgravity accelerates skeletal muscle degeneration: Functional and transcriptomic insights from an ISS muscle lab-on-chip model," npj Microgravity, vol. 7, no. 1, 2021.
+        </li>
+        <li>
+          K. G. Warthen et al., "Brain and cerebrospinal fluid 3D center of mass shift after spaceflight," npj Microgravity, vol. 11, no. 1, 2025.
+        </li>
+        <li>
+          Taoufik et al., "Astronaut physiological deconditioning and exercise prescription countermeasures in spaceflight," NASA, 2021.
+        </li>
+        <li>
+          M. Hu et al., "Blood flow restriction training in microgravity: a review of multisystem physiological benefits and implementation challenges for long-duration space missions," npj Microgravity, vol. 8, no. 1, 2022.
+        </li>
+        <li>
+          J. Juhl et al., "Update on the effects of microgravity on the musculoskeletal system," npj Microgravity, vol. 7, no. 1, 2021.
+        </li>
+        <li>
+          P. Comfort et al., "Effects of Spaceflight on Musculoskeletal Health: A Systematic Review and Meta-analysis, Considerations for Interplanetary Travel," Sports Medicine, vol. 51, no. 9, pp. 1953-1966, 2021.
+        </li>
+      </ol>
+		</TextSection>
+	</Container>
+</Layout>

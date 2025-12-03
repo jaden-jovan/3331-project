@@ -1,0 +1,33 @@
+---
+import { Container, TextSection } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: 'Background | NMES for Astronauts',
+	description: 'Etiology and Affected Demographic of Muscle Degradation in Space',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<TextSection narrow>
+			<h1>Background</h1>
+			
+      <h2>Affected Demographic</h2>
+			<p>
+				The primary demographic susceptible to space-induced muscular deconditioning consists of crew members engaged in long-duration spaceflights, which are missions extending from several months to potentially years [3]. The resulting physiological maladaptation is a universal phenomenon observed across all astronauts, varying according to factors such as pre-flight physical conditioning, age, or sex [4]. A direct correlation has been established between the duration of microgravity exposure and the severity of muscle atrophy and associated physiological decrements, underscoring the cumulative nature of the risk for extended missions [5].
+      </p>
+      <p>
+        While the demographic population is small, this problem has far-reaching societal impacts. Muscle atrophy is one of the main bottlenecks limiting spaceflight duration and, therefore distance that can be traveled away from Earth. Aside from limiting the potential of a singular spaceflight, this problem also poses a threat to astronauts who spend significant time on spacecrafts, reducing the productivity a single astronaut can achieve.
+			</p>
+
+      <h2>Etiology of Muscle Degradation</h2>
+      <p>
+        The fundamental etiological factor responsible for muscle degradation in space is the profound reduction of mechanical loading on the musculoskeletal system. On Earth, gravitational forces provide a constant mechanical stimulus integral to the maintenance of muscle mass and bone homeostasis [6]. In the microgravity environment, the near absence of this stimulus initiates a complex cascade of physiological dysregulation.
+      </p>
+      <p>
+        The most pronounced effect is a rapid atrophy of anti-gravity muscles, particularly the extensors of the legs and spine, which can lead to losses of up to 30% of muscle mass over a six-month mission [2]. This muscular decline is paralleled by a decrease in bone mineral density, elevating the risk of fractures [7].
+      </p>
+		</TextSection>
+	</Container>
+</Layout>

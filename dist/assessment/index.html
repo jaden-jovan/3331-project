@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/favicon.png"><!-- Primary Meta Tags --><title>Assessment | NMES for Astronauts</title><meta name="title" content="Assessment | NMES for Astronauts"><meta name="description" content="Test your knowledge about NMES and astronaut health"><link rel="canonical" href="https://odyssey-theme.sapling.supply/assessment/"><!-- Generator --><meta name="generator" content="Astro v4.15.9"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://odyssey-theme.sapling.supply/assessment/"><meta property="og:title" content="Assessment | NMES for Astronauts"><meta property="og:description" content="Test your knowledge about NMES and astronaut health"><meta property="og:image" content="https://odyssey-theme.sapling.supply/social.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://odyssey-theme.sapling.supply/assessment/"><meta property="twitter:title" content="Assessment | NMES for Astronauts"><meta property="twitter:description" content="Test your knowledge about NMES and astronaut health"><meta property="twitter:image" content="https://odyssey-theme.sapling.supply/social.png"><!-- For Demonstration of the themes --><!-- This is a simple script to check if there is a theme value in local storage. That way the theme stays with you between pages --><script>
+	const doc = document.firstElementChild;
+	const localStorageTheme = localStorage.getItem('theme');
+
+	if (localStorageTheme !== null) {
+		doc.setAttribute('data-theme', localStorageTheme);
+	}
+</script><!-- Google Analytics --><style>.quiz-container[data-astro-cid-ikzcxylh]{background:var(--theme-surface-1);padding:2rem;border-radius:var(--theme-shape-radius);border:1px solid var(--theme-surface-2)}.question[data-astro-cid-ikzcxylh]{margin-bottom:2rem}.question[data-astro-cid-ikzcxylh] h3[data-astro-cid-ikzcxylh]{margin-bottom:1rem}.question[data-astro-cid-ikzcxylh] label[data-astro-cid-ikzcxylh]{display:block;margin-bottom:.5rem;cursor:pointer}.question[data-astro-cid-ikzcxylh] input[data-astro-cid-ikzcxylh]{margin-right:.5rem}.result[data-astro-cid-ikzcxylh]{margin-top:2rem;padding:1rem;border-radius:8px;font-weight:700}.result[data-astro-cid-ikzcxylh].success{background-color:#d4edda;color:#155724}.result[data-astro-cid-ikzcxylh].error{background-color:#f8d7da;color:#721c24}.hidden[data-astro-cid-ikzcxylh]{display:none}
+</style>
+<link rel="stylesheet" href="/_astro/consider-hybrid-work.6RmqerQy.css">
+<link rel="stylesheet" href="/_astro/contact.40_6hDNW.css"><script type="module">const s=document.getElementById("quiz-form"),e=document.getElementById("result");s.addEventListener("submit",r=>{r.preventDefault();const o={q1:"b",q2:"c",q3:"a"};let t=0;const n=new FormData(s);for(const[c,a]of Object.entries(o))n.get(c)===a&&t++;e.classList.remove("hidden","success","error"),t===3?(e.textContent=`Perfect! You got ${t}/3 correct.`,e.classList.add("success")):(e.textContent=`You got ${t}/3 correct. Review the material and try again.`,e.classList.add("error"))});
+</script>
+<script>/** @license Copyright 2020 Google LLC (BSD-3-Clause) */
+/** Bundled JS generated from "@astrojs/lit/client-shim.js" */
+var N = Object.defineProperty;
+var i = (t, n) => () => (t && (n = t((t = 0))), n);
+var b = (t, n) => {
+	for (var a in n) N(t, a, { get: n[a], enumerable: !0 });
+};
+function s() {
+	if (d === void 0) {
+		let t = document.createElement('div');
+		(t.innerHTML = '<div><template shadowroot="open" shadowrootmode="open"></template></div>'),
+			(d = !!t.firstElementChild.shadowRoot);
+	}
+	return d;
+}
+var d,
+	m = i(() => {});
+var p,
+	c,
+	f,
+	u = i(() => {
+		(p = (t) => t.parentElement === null),
+			(c = (t) => t.tagName === 'TEMPLATE'),
+			(f = (t) => t.nodeType === Node.ELEMENT_NODE);
+	});
+var h,
+	E = i(() => {
+		m();
+		u();
+		h = (t) => {
+			var n;
+			if (s()) return;
+			let a = [],
+				e = t.firstElementChild;
+			for (; e !== t && e !== null; )
+				if (c(e)) a.push(e), (e = e.content);
+				else if (e.firstElementChild !== null) e = e.firstElementChild;
+				else if (f(e) && e.nextElementSibling !== null) e = e.nextElementSibling;
+				else {
+					let o;
+					for (; e !== t && e !== null; )
+						if (p(e)) {
+							o = a.pop();
+							let r = o.parentElement,
+								l = o.getAttribute('shadowroot');
+							if (((e = o), l === 'open' || l === 'closed')) {
+								let y = o.hasAttribute('shadowrootdelegatesfocus');
+								try {
+									r.attachShadow({ mode: l, delegatesFocus: y }).append(o.content);
+								} catch {}
+							} else o = void 0;
+						} else {
+							let r = e.nextElementSibling;
+							if (r != null) {
+								(e = r), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							let l =
+								(n = e.parentElement) === null || n === void 0 ? void 0 : n.nextElementSibling;
+							if (l != null) {
+								(e = l), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							(e = e.parentElement), o !== void 0 && (o.parentElement.removeChild(o), (o = void 0));
+						}
+				}
+		};
+	});
+var w = i(() => {
+	E();
+});
+var v = {};
+b(v, { hasNativeDeclarativeShadowRoots: () => s, hydrateShadowRoots: () => h });
+var S = i(() => {
+	m();
+	w();
+});
+async function g() {
+	let { hydrateShadowRoots: t } = await Promise.resolve().then(() => (S(), v));
+	window.addEventListener('DOMContentLoaded', () => t(document.body), { once: true });
+}
+var x = new DOMParser()
+	.parseFromString(
+		'<p><template shadowroot="open" shadowrootmode="open"></template></p>',
+		'text/html',
+		{
+			includeShadowRoots: !0,
+		}
+	)
+	.querySelector('p');
+(!x || !x.shadowRoot) && g();
+</script></head> <body> <a href="#content" data-astro-cid-c7ibh6fj>Skip to main content</a>   <script type="module">
+  const bodyElement = document.querySelector('body');
+  const menuButton = document.querySelector('#menuButton')
+  const navHeader = document.querySelector('#odysseyNavHeader');
+  const menuButtonIconHam = document.querySelector('#menuButtonIconHam');
+  const menuButtonIconClose = document.querySelector('#menuButtonIconClose');
+  let scrollPosition = 0;
+
+  menuButton.addEventListener('click', toggleMenu)
+
+  function toggleMenu() {
+    menuButtonIconHam.toggleAttribute('hidden');
+    menuButtonIconClose.toggleAttribute('hidden');
+    
+    if (navHeader.hasAttribute('mobile-menu-open', true)) {
+      menuButton.title = "Open Main Menu"
+      // unlock scroll position
+      bodyElement.style.removeProperty('overflow');
+      bodyElement.style.removeProperty('position');
+      bodyElement.style.removeProperty('top');
+      bodyElement.style.removeProperty('width');
+      window.scrollTo(0, scrollPosition);
+    } else {
+      menuButton.title = "Close Main Menu"
+      // lock scroll position
+      scrollPosition = window.pageYOffset;
+      bodyElement.style.overflow = 'hidden';
+      bodyElement.style.position = 'fixed';
+      bodyElement.style.top = `-${scrollPosition}px`;
+      bodyElement.style.width = '100%';
+    }
+    
+    navHeader.toggleAttribute('mobile-menu-open');
+  }
+</script> <header id="odysseyNavHeader" class="header--right" data-astro-cid-3hxe222u> <div class="header-logo-menu__container" data-astro-cid-3hxe222u> <button id="menuButton" title="Open Main Menu" data-astro-cid-3hxe222u> <span id="menuButtonIconHam" data-astro-cid-3hxe222u> <svg width="24px" height="24px" viewBox="0 0 24 24" data-astro-cid-3hxe222u data-icon="ic:baseline-menu">  <symbol id="ai:ic:baseline-menu"><path fill="currentColor" d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"/></symbol><use xlink:href="#ai:ic:baseline-menu"></use>  </svg> </span> <span id="menuButtonIconClose" hidden data-astro-cid-3hxe222u> <svg width="24px" height="24px" viewBox="0 0 24 24" data-astro-cid-3hxe222u data-icon="ic:baseline-close">  <symbol id="ai:ic:baseline-close"><path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"/></symbol><use xlink:href="#ai:ic:baseline-close"></use>  </svg> </span> </button> <a class="header-logo__link" href="/" data-astro-cid-3hxe222u> <span> <p class="odyssey-logo" data-astro-cid-tvrurpns>Odyssey</p>  </span> </a> </div> <div class="header-nav__container" data-astro-cid-3hxe222u>  <nav data-astro-cid-3hxe222u> <ul data-astro-cid-3hxe222u> <li data-astro-cid-3hxe222u><a href="/" data-astro-cid-3hxe222u>Home</a></li><li data-astro-cid-3hxe222u><a href="/background" data-astro-cid-3hxe222u>Background</a></li><li data-astro-cid-3hxe222u><a href="/countermeasures" data-astro-cid-3hxe222u>Countermeasures</a></li><li data-astro-cid-3hxe222u><a href="/simulation" data-astro-cid-3hxe222u>Simulation</a></li><li data-astro-cid-3hxe222u><a href="/assessment" data-astro-cid-3hxe222u>Assessment</a></li><li data-astro-cid-3hxe222u><a href="/references" data-astro-cid-3hxe222u>References</a></li> </ul> </nav>  </div> <div class="header-action-item__container" data-astro-cid-3hxe222u> <a class="btn undefined undefined undefined" href="/theme/get-started" target="" rel="" data-astro-cid-5sjhwv6c> Get Started </a>  </div> </header>  <main id="content">   <div id="page">  <div class="content__container " data-astro-cid-swtg25lo>  <div class="content__container content__container--narrow" data-astro-cid-swtg25lo>  <section class="text__section" data-astro-cid-umdwotzd>  <h1 data-astro-cid-ikzcxylh>Assessment</h1> <p data-astro-cid-ikzcxylh>
+Test your understanding of the material presented in this course.
+</p> <div class="quiz-container" data-astro-cid-ikzcxylh> <form id="quiz-form" data-astro-cid-ikzcxylh> <div class="question" data-astro-cid-ikzcxylh> <h3 data-astro-cid-ikzcxylh>1. What is the primary cause of muscle degradation in space?</h3> <label data-astro-cid-ikzcxylh><input type="radio" name="q1" value="a" data-astro-cid-ikzcxylh> Radiation exposure</label> <label data-astro-cid-ikzcxylh><input type="radio" name="q1" value="b" data-astro-cid-ikzcxylh> Lack of mechanical loading</label> <label data-astro-cid-ikzcxylh><input type="radio" name="q1" value="c" data-astro-cid-ikzcxylh> Poor nutrition</label> </div> <div class="question" data-astro-cid-ikzcxylh> <h3 data-astro-cid-ikzcxylh>2. Which muscles are most severely affected by microgravity?</h3> <label data-astro-cid-ikzcxylh><input type="radio" name="q2" value="a" data-astro-cid-ikzcxylh> Arm muscles</label> <label data-astro-cid-ikzcxylh><input type="radio" name="q2" value="b" data-astro-cid-ikzcxylh> Facial muscles</label> <label data-astro-cid-ikzcxylh><input type="radio" name="q2" value="c" data-astro-cid-ikzcxylh> Anti-gravity muscles (legs and spine)</label> </div> <div class="question" data-astro-cid-ikzcxylh> <h3 data-astro-cid-ikzcxylh>3. How does NMES help maintain muscle mass?</h3> <label data-astro-cid-ikzcxylh><input type="radio" name="q3" value="a" data-astro-cid-ikzcxylh> By providing electrical impulses to induce contraction</label> <label data-astro-cid-ikzcxylh><input type="radio" name="q3" value="b" data-astro-cid-ikzcxylh> By increasing blood flow only</label> <label data-astro-cid-ikzcxylh><input type="radio" name="q3" value="c" data-astro-cid-ikzcxylh> By cooling the muscles</label> </div> <button type="submit" id="submit-btn" data-astro-cid-ikzcxylh>Submit Answers</button> </form> <div id="result" class="result hidden" data-astro-cid-ikzcxylh></div> </div>  </section>  </div>    </div>   </div>  </main>  </body></html>  
