@@ -12,8 +12,8 @@ const seo = {
 	<Container>
 		<TextSection narrow>
 			<h1 style="text-align: center;">Muscle Atrophy Simulator</h1>
-			<p>
-				Visualize how a human thigh muscle changes over 6 months in space. Compare the effects of doing nothing, exercising, and using NMES.
+			<p style="text-align: center;">
+				<strong>Visualize</strong> how a human thigh muscle changes over 6 months in space. <strong>Compare</strong> the effects of doing <strong>nothing</strong>, <strong>exercising</strong>, and using <strong>NMES</strong>.
 			</p>
 
       <div class="simulator-container">
@@ -54,6 +54,16 @@ const seo = {
           Day 0: Launch day. Muscle health is optimal.
         </div>
       </div>
+
+      <div class="nav-button-container">
+        <a href="/assessment" class="nav-arrow" aria-label="Next: Assessment">
+          <span class="nav-label">NEXT</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
 		</TextSection>
 	</Container>
 </Layout>
@@ -65,7 +75,32 @@ const seo = {
   .nav-button-container {
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
+  }
+  .nav-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--theme-on-bg);
+    opacity: 0.5;
+    transition: all var(--theme-transition);
+    text-decoration: none;
+  }
+  .nav-arrow:hover {
+    color: var(--theme-primary);
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px var(--theme-primary));
+  }
+  .nav-arrow svg {
+    width: 48px;
+    height: 48px;
+  }
+  .nav-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 0.5rem;
+    letter-spacing: 2px;
   }
   .simulator-container {
     border: 2px solid var(--theme-surface-2);

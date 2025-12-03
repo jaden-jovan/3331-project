@@ -1,5 +1,5 @@
 ---
-import { Container, TextSection, FeatureCard } from '@components/odyssey-theme';
+import { Container, TextSection } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 
 const seo = {
@@ -14,8 +14,8 @@ const seo = {
 		<h1 style="text-align: center;">
       Countermeasures: Fighting the Fade
     </h1>
-		<p>
-			To combat muscle loss, space agencies currently rely on one main tool: <strong>exercise</strong>. But is it enough? And what if there's a better way?
+		<p style="text-align: center;">
+			To <strong>combat</strong> muscle loss, space agencies currently rely on one main tool: <strong>exercise</strong>. But is it enough? And what if there's a better way?
 		</p>
     </TextSection>
 
@@ -24,12 +24,12 @@ const seo = {
         <h2>The Old Way: Exercise</h2>
         <ul>
           <li><strong>Heavy Lifting:</strong> Astronauts must strap themselves into massive resistance machines.</li>
-          <li><strong>Time Consuming:</strong> Requires 2+ hours of intense sweating every single day.</li>
+          <li><strong>Time Consuming:</strong> Requires 2+ hours of <strong>intense</strong> sweating every single day.</li>
           <li><strong>Incomplete:</strong> Even with this effort, some muscle loss still occurs.</li>
         </ul>
         <div class="limitations">
           <h3>The Drawback</h3>
-          <p>It eats up valuable mission time and requires equipment too heavy for a Mars mission.</p>
+          <p>It eats up valuable mission time and requires equipment too <strong>heavy</strong> for a Mars mission.</p>
         </div>
       </div>
 
@@ -42,14 +42,65 @@ const seo = {
         </ul>
         <div class="benefits">
           <h3>The Advantage</h3>
-          <p>Wear it while you work. Maintain muscle mass without sacrificing mission time.</p>
+          <p>Wear it while you work. <strong>Maintain</strong> muscle mass without sacrificing mission time.</p>
         </div>
       </div>
     </section>
+
+    <div class="nav-button-container">
+      <a href="/simulation" class="nav-arrow" aria-label="Next: The Simulation">
+        <span class="nav-label">NEXT</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
 	</Container>
 </Layout>
 
 <style>
+  .nav-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .nav-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--theme-on-bg);
+    opacity: 0.5;
+    transition: all var(--theme-transition);
+    text-decoration: none;
+  }
+  .nav-arrow:hover {
+    color: var(--theme-primary);
+    opacity: 1;
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px var(--theme-primary));
+  }
+  .nav-arrow svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-arrow:hover {
+    color: var(--theme-primary);
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px var(--theme-primary));
+  }
+  .nav-arrow svg {
+    width: 48px;
+    height: 48px;
+  }
+  .nav-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 0.5rem;
+    letter-spacing: 2px;
+  }
   .icon-header {
     display: inline-flex;
     align-items: center;

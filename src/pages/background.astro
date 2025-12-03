@@ -1,5 +1,5 @@
 ---
-import { Container, TextSection, Button } from '@components/odyssey-theme';
+import { Container, TextSection } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 
 const seo = {
@@ -23,8 +23,32 @@ const seo = {
   .nav-button-container {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
-    transform: scale(1.2);
+    margin-top: 2rem;
+  }
+  .nav-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--theme-on-bg);
+    opacity: 0.5;
+    transition: all var(--theme-transition);
+    text-decoration: none;
+  }
+  .nav-arrow:hover {
+    color: var(--theme-primary);
+    opacity: 1;
+    transform: scale(1.1); /* Reduced scale slightly to accommodate text */
+    filter: drop-shadow(0 0 5px var(--theme-primary));
+  }
+  .nav-arrow svg {
+    width: 48px;
+    height: 48px;
+  }
+  .nav-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 0.5rem;
+    letter-spacing: 2px;
   }
 </style>
 
@@ -35,13 +59,13 @@ const seo = {
       
       <h3>Who is at Risk?</h3>
       <p>
-        Every astronaut on a long-duration mission faces this challenge. Whether it's a 6-month stay on the ISS or a 3-year journey to Mars, the human body adapts to its environment—often in ways we don't want.
+        Every astronaut on a <strong>long-duration</strong> mission faces this challenge. Whether it's a 6-month stay on the ISS or a 3-year journey to Mars, the human body <strong>adapts</strong> to its environment—often in ways we don't want.
       </p>
       <p>
         Astronauts face a unique challenge: <strong>microgravity</strong>. On Earth, our muscles are constantly working against gravity to support our weight and move us around. In space, this load disappears.
       </p>
       <p>
-        Without gravity pulling on them, muscles begin to weaken immediately. This isn't just about strength; it's about safety. A weakened crew member might struggle with emergency procedures or be unable to walk upon returning to Earth (or landing on Mars).
+        Without gravity pulling on them, muscles begin to <strong>weaken</strong> immediately. This isn't just about strength; it's about <strong>safety</strong>. A weakened crew member might struggle with emergency procedures or be unable to walk upon returning to Earth (or landing on Mars).
       </p>
       
       <h3>Why Does It Happen?</h3>
@@ -52,15 +76,13 @@ const seo = {
         The body, being efficient, stops maintaining muscle it doesn't need. The result? Up to <strong>30% muscle mass loss</strong> in just six months. Bones also become brittle, increasing fracture risk.
       </p>
       <div class="nav-button-container">
-        <Button href="/countermeasures" customIcon>
-          Next: The Solutions
-          <Fragment slot="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </Fragment>
-        </Button>
+        <a href="/countermeasures" class="nav-arrow" aria-label="Next: The Solutions">
+          <span class="nav-label">NEXT</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
       </div>
     </TextSection>
   </Container>

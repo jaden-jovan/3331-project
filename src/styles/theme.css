@@ -38,6 +38,6 @@
 	/* Theme Fonts */
 	--theme-font-family-serif: 'Roboto Serif', Georgia, Cambria, 'Times New Roman',
 		Times, serif;
-	--theme-font-family-sans: 'Lato', -apple-system, BlinkMacSystemFont,
+	--theme-font-family-sans: 'Roboto Serif', 'Lato', -apple-system, BlinkMacSystemFont,
 		sans-serif;
 }
