@@ -1,7 +1,7 @@
 ---
-import { Container, TextSection } from '@components/odyssey-theme';
+import { Container, FeatureCard } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
-import HeroSection from '../components/sections/heros/HeroSection.astro';
+import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 
 const seo = {
 	title: 'NMES for Astronauts | Home',
@@ -10,11 +10,11 @@ const seo = {
 ---
 
 <Layout seo={seo}>
-	<HeroSection>
+	<HomeHeroSection>
 		<div slot="text-container">
-			<h1>Neuromuscular Electrical Stimulation and Muscle Weakness in Astronauts</h1>
+			<h1>NMES for Astronauts</h1>
 			<p>
-				Exploring solutions for muscle atrophy in long-duration space missions.
+				Combating muscle atrophy in long-duration space missions with Neuromuscular Electrical Stimulation.
 			</p>
 		</div>
     <picture slot="image-container">
@@ -24,17 +24,40 @@ const seo = {
         id="home-hero-image"
       />
     </picture>
-	</HeroSection>
+	</HomeHeroSection>
 
 	<Container>
-		<TextSection narrow>
-			<h2>Introduction</h2>
-			<p>
-				The progression of human space exploration towards long-duration interplanetary missions necessitates a comprehensive understanding of the physiological challenges imposed by the microgravity environment [1]. Among the most significant health concerns is the rapid degradation of skeletal muscle mass and function, a condition termed muscle atrophy, which can substantially impair crew performance during missions and pose significant risks to crew health upon re-exposure to a gravitational field [2].
-			</p>
+    <section class="feature-card__section">
+      <h2>Explore the Topic</h2>
       <p>
-        This website provides a comprehensive review of the etiology of this condition, the affected demographic, the current therapeutic countermeasures, and their inherent limitations. It further proposes electrode-based muscle stimulation as a viable and technologically efficient intervention to mitigate this critical health risk.
+        Learn about the problem, the current solutions, and how NMES can help.
       </p>
-		</TextSection>
+      <div class="feature-card__grid">
+        <FeatureCard href="/background" title="The Context" imgSrc="/assets/images/home/screenshots/landing-1">
+        </FeatureCard>
+        <FeatureCard href="/countermeasures" title="The Solutions" imgSrc="/assets/images/home/screenshots/landing-2">
+        </FeatureCard>
+        <FeatureCard href="/simulation" title="Simulation" imgSrc="/assets/images/home/screenshots/about">
+        </FeatureCard>
+        <FeatureCard href="/assessment" title="Take Quiz" imgSrc="/assets/images/home/screenshots/contact">
+        </FeatureCard>
+      </div>
+    </section>
 	</Container>
 </Layout>
+
+<style>
+	.feature-card__section {
+		margin: var(--section-margin) auto;
+	}
+	.feature-card__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--theme-grid-gap);
+	}
+	@media (max-width: 768px) {
+		.feature-card__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

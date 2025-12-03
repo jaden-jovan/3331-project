@@ -1,26 +1,22 @@
 export const nav = [
   {
-    title: 'Home',
-    slug: '/',
-  },
-  {
-    title: 'Background',
+    title: 'Context',
     slug: '/background',
   },
   {
-    title: 'Countermeasures',
+    title: 'Solutions',
     slug: '/countermeasures',
   },
   {
-    title: 'Simulation',
+    title: 'Simulate',
     slug: '/simulation',
   },
   {
-    title: 'Assessment',
+    title: 'Quiz',
     slug: '/assessment',
   },
   {
-    title: 'References',
+    title: 'Refs',
     slug: '/references',
   },
 ];

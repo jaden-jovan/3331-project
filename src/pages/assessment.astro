@@ -39,6 +39,20 @@ const seo = {
             <label><input type="radio" name="q3" value="c"> By cooling the muscles</label>
           </div>
 
+          <div class="question">
+            <h3>4. What is a key advantage of NMES over traditional exercise equipment for spaceflight?</h3>
+            <label><input type="radio" name="q4" value="a"> It tastes better</label>
+            <label><input type="radio" name="q4" value="b"> Low mass, volume, and power requirements</label>
+            <label><input type="radio" name="q4" value="c"> It generates gravity</label>
+          </div>
+
+          <div class="question">
+            <h3>5. Why is the "passive" nature of NMES beneficial for astronauts?</h3>
+            <label><input type="radio" name="q5" value="a"> It allows them to sleep all day</label>
+            <label><input type="radio" name="q5" value="b"> It requires no equipment</label>
+            <label><input type="radio" name="q5" value="c"> It can be used during other tasks or rest, saving crew time</label>
+          </div>
+
           <button type="submit" id="submit-btn">Submit Answers</button>
         </form>
 
@@ -106,7 +120,9 @@ const seo = {
     const answers = {
       q1: 'b',
       q2: 'c',
-      q3: 'a'
+      q3: 'a',
+      q4: 'b',
+      q5: 'c'
     };
 
     let score = 0;
@@ -120,11 +136,11 @@ const seo = {
 
     result.classList.remove('hidden', 'success', 'error');
     
-    if (score === 3) {
-      result.textContent = `Perfect! You got ${score}/3 correct.`;
+    if (score === 5) {
+      result.textContent = `Perfect! You got ${score}/5 correct.`;
       result.classList.add('success');
     } else {
-      result.textContent = `You got ${score}/3 correct. Review the material and try again.`;
+      result.textContent = `You got ${score}/5 correct. Review the material and try again.`;
       result.classList.add('error');
     }
   });
