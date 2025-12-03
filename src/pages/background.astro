@@ -1,5 +1,5 @@
 ---
-import { Container, StickyTextImageSection } from '@components/odyssey-theme';
+import { Container, TextSection, Button } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 
 const seo = {
@@ -20,29 +20,26 @@ const seo = {
 		max-width: 100%;
 		border-radius: var(--theme-shape-radius);
 	}
+  .nav-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    transform: scale(1.2);
+  }
 </style>
 
 <Layout seo={seo}>
-  <StickyTextImageSection>
-    <div slot="text-container">
-      <h2>The Problem: Muscle Atrophy</h2>
+  <Container>
+    <TextSection narrow>
+      <h1 style="text-align: center;">The Context: Muscle Atrophy in Space</h1>
+      
       <h3>Who is at Risk?</h3>
       <p>
         Every astronaut on a long-duration mission faces this challenge. Whether it's a 6-month stay on the ISS or a 3-year journey to Mars, the human body adapts to its environment—often in ways we don't want.
       </p>
-		<h1>
-      <span class="icon-header">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
-          <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-          <line x1="16" y1="8" x2="2" y2="22"></line>
-          <line x1="17.5" y1="15" x2="9" y2="15"></line>
-        </svg>
-      </span>
-      The Context: Muscle Atrophy in Space
-    </h1>
-		<p>
-			Astronauts face a unique challenge: <strong>microgravity</strong>. On Earth, our muscles are constantly working against gravity to support our weight and move us around. In space, this load disappears.
-		</p>
+      <p>
+        Astronauts face a unique challenge: <strong>microgravity</strong>. On Earth, our muscles are constantly working against gravity to support our weight and move us around. In space, this load disappears.
+      </p>
       <p>
         Without gravity pulling on them, muscles begin to weaken immediately. This isn't just about strength; it's about safety. A weakened crew member might struggle with emergency procedures or be unable to walk upon returning to Earth (or landing on Mars).
       </p>
@@ -54,13 +51,17 @@ const seo = {
       <p>
         The body, being efficient, stops maintaining muscle it doesn't need. The result? Up to <strong>30% muscle mass loss</strong> in just six months. Bones also become brittle, increasing fracture risk.
       </p>
-    </div>
-     <picture slot="image-container">
-      <img
-        src="/assets/images/home/classic-hero.jpg"
-        alt="Astronauts working in space"
-        loading="lazy"
-      />
-    </picture>
-  </StickyTextImageSection>
+      <div class="nav-button-container">
+        <Button href="/countermeasures" customIcon>
+          Next: The Solutions
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </Fragment>
+        </Button>
+      </div>
+    </TextSection>
+  </Container>
 </Layout>
