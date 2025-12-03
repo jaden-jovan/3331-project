@@ -1,5 +1,9 @@
 export const nav = [
   {
+    title: 'Mission',
+    slug: '/mission',
+  },
+  {
     title: 'Context',
     slug: '/background',
   },

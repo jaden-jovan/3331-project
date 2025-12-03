@@ -1,0 +1,96 @@
+---
+import { Container, FeatureCard } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+
+const seo = {
+	title: 'NMES for Astronauts | Home',
+	description: 'Introduction to Neuromuscular Electrical Stimulation and Muscle Weakness in Astronauts',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+    <section class="feature-card__section">
+      <h2>Mission Briefing</h2>
+      <p>
+        Space is hostile to the human body. Without gravity, muscles waste away. Explore the challenge, the current fixes, and the future solution.
+      </p>
+      <div class="feature-card__grid">
+        <FeatureCard href="/background" title="The Context">
+          <div slot="icon" class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+              <line x1="16" y1="8" x2="2" y2="22"></line>
+              <line x1="17.5" y1="15" x2="9" y2="15"></line>
+            </svg>
+          </div>
+        </FeatureCard>
+        <FeatureCard href="/countermeasures" title="The Solutions">
+          <div slot="icon" class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              <path d="M12 12v3"></path>
+              <path d="M8 12h8"></path>
+            </svg>
+          </div>
+        </FeatureCard>
+        <FeatureCard href="/simulation" title="Simulation">
+          <div slot="icon" class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18"></path>
+              <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path>
+            </svg>
+          </div>
+        </FeatureCard>
+        <FeatureCard href="/assessment" title="Take Quiz">
+          <div slot="icon" class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"></path>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+          </div>
+        </FeatureCard>
+      </div>
+    </section>
+	</Container>
+</Layout>
+
+<style>
+	.feature-card__section {
+		margin: var(--section-margin) auto;
+	}
+	.feature-card__section h2,
+	.feature-card__section p {
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 800px;
+	}
+	.feature-card__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--theme-grid-gap);
+	}
+  .card-icon {
+    width: 100px;
+    height: 100px;
+    margin: 2rem auto;
+    color: var(--theme-primary);
+    transition: transform 0.3s ease;
+  }
+  .card-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  :global(.feature-card__link:hover) .card-icon {
+    transform: scale(1.1);
+    color: var(--theme-primary-hover);
+  }
+	@media (max-width: 768px) {
+		.feature-card__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

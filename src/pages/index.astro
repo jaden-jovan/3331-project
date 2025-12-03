@@ -1,63 +1,107 @@
 ---
-import { Container, FeatureCard } from '@components/odyssey-theme';
+import { Container, TextSection, Button } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
-import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 
 const seo = {
-	title: 'NMES for Astronauts | Home',
-	description: 'Introduction to Neuromuscular Electrical Stimulation and Muscle Weakness in Astronauts',
+	title: 'NMES for Astronauts | Project',
+	description: 'Anatomy & Physiology Project: Neuromuscular Electrical Stimulation',
 };
 ---
 
 <Layout seo={seo}>
-	<HomeHeroSection>
-		<div slot="text-container">
-			<h1>NMES for Astronauts</h1>
-			<p>
-				Combating muscle atrophy in long-duration space missions with Neuromuscular Electrical Stimulation.
-			</p>
+	<div class="landing-hero-text">
+		<span class="course-name">Anatomy & Physiology</span>
+		<h1>NMES and Muscle Weakness in Astronauts</h1>
+		<div class="group-members">
+			<p><strong>Group Members:</strong></p>
+			<ul>
+				<li>Jaden Jovan</li>
+				<li>Shehrooz Mirza</li>
+				<li>Anirudh Chatari</li>
+			</ul>
 		</div>
-    <picture slot="image-container">
-      <img
-        src="/assets/images/home/classic-hero.jpg"
-        alt="Astronauts in space"
-        id="home-hero-image"
-      />
-    </picture>
-	</HomeHeroSection>
-
-	<Container>
-    <section class="feature-card__section">
-      <h2>Explore the Topic</h2>
-      <p>
-        Learn about the problem, the current solutions, and how NMES can help.
-      </p>
-      <div class="feature-card__grid">
-        <FeatureCard href="/background" title="The Context" imgSrc="/assets/images/home/screenshots/landing-1">
-        </FeatureCard>
-        <FeatureCard href="/countermeasures" title="The Solutions" imgSrc="/assets/images/home/screenshots/landing-2">
-        </FeatureCard>
-        <FeatureCard href="/simulation" title="Simulation" imgSrc="/assets/images/home/screenshots/about">
-        </FeatureCard>
-        <FeatureCard href="/assessment" title="Take Quiz" imgSrc="/assets/images/home/screenshots/contact">
-        </FeatureCard>
-      </div>
-    </section>
-	</Container>
+		<div class="cta-container">
+			<Button href="/mission" customIcon>
+				Begin Mission
+				<Fragment slot="icon">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+						<line x1="5" y1="12" x2="19" y2="12"></line>
+						<polyline points="12 5 19 12 12 19"></polyline>
+					</svg>
+				</Fragment>
+			</Button>
+		</div>
+	</div>
 </Layout>
 
 <style>
-	.feature-card__section {
-		margin: var(--section-margin) auto;
+	.landing-hero-text {
+		text-align: center;
+		margin: 0 auto;
+		max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding-top: 4rem;
 	}
-	.feature-card__grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--theme-grid-gap);
+
+	.course-name {
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: var(--theme-primary);
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		display: block;
+		margin-bottom: 1.5rem;
+    opacity: 0.9;
 	}
-	@media (max-width: 768px) {
-		.feature-card__grid {
-			grid-template-columns: 1fr;
-		}
+
+  h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, var(--theme-on-bg), var(--theme-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+	.group-members {
+		margin: 2rem 0 3rem 0;
+		font-size: 1.25rem;
+    opacity: 0.8;
 	}
+
+	.group-members ul {
+		list-style: none;
+		padding: 0;
+		margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+	}
+
+	.group-members li {
+		margin-bottom: 0;
+    position: relative;
+	}
+  
+  .group-members li:not(:last-child)::after {
+    content: "•";
+    position: absolute;
+    right: -1.2rem;
+    color: var(--theme-primary);
+  }
+
+	.cta-container {
+		margin-top: 2rem;
+    transform: scale(1.5); /* Make the button significantly larger */
+    transition: transform 0.3s ease;
+	}
+  
+  .cta-container:hover {
+    transform: scale(1.6);
+  }
 </style>
